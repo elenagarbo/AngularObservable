@@ -1,0 +1,24 @@
+<h2>Mis Eventos</h2>
+  <table style="text-align: center">
+    <thead>
+      <th style="width: 20%">Id</th>
+      <th style="width: 20%">Ciudad</th>
+      <th style="width: 30%">Feria</th>
+      <th style="width: 20%">Borrar</th>
+      <th style="width: 20%">Editar</th>
+    </thead>
+    <tbody *ngFor="let evento of eventos"
+        [class.selected]="evento === selectedEvento"
+        (click)="onSelect(eventos)">
+        <tr>
+          <td style="width: 20%">{{evento.id}}</td>
+          <td style="width: 20%">{{evento.ciudad}}</td>
+          <td style="width: 30%">{{evento.feria}}</td>
+          <td style="width: 20%"><button class="delete" title="delete evento"
+            (click)="delete(evento)">Eliminar</button></td>
+          <td style="width: 30%"><button class="delete" title="actualiza evento"
+            routerLink="/detail/{{evento.id}}">Editar</button></td>
+        </tr>
+    </tbody>
+  </table>
+ 

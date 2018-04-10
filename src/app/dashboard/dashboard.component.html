@@ -1,0 +1,11 @@
+<h3>Top Eventos</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let evento of eventos" class="col-1-4">
+    <div class="module evento">
+      <h4>{{evento.ciudad}}</h4>
+    </div>
+    <div class="module evento">
+        <h4>{{evento.feria}}</h4>
+      </div>
+  </a>
+</div>

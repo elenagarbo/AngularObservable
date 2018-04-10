@@ -1,0 +1,17 @@
+<div *ngIf="evento">
+
+    <h2>{{ evento.ciudad | uppercase }} Detalles</h2>
+    <div><span>id: </span>{{evento.id}}</div>
+    <div>
+      <label>Ciudad:
+        <input [(ngModel)]="evento.ciudad" placeholder="ciudad"/>
+      </label>
+    </div>
+    <div>
+        <label>Feria:
+          <input [(ngModel)]="evento.feria" placeholder="feria"/>
+        </label>
+      </div>
+      <button (click)="goBack()">go back</button>
+      <button (click)="save()">save</button>
+  </div>
