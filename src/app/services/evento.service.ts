@@ -17,10 +17,9 @@ export class EventoService {
  
   private eventosUrl = 'api/eventos';  // URL to web api
  
-  constructor(
-    private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
  
-  /** GET heroes from the server */
+  /** GET eventos from the server */
   getEventos (): Observable<Evento[]> {
     return this.http.get<Evento[]>(this.eventosUrl)
       .pipe(
@@ -28,7 +27,7 @@ export class EventoService {
       );
   }
  
-  /** GET hero by id. Return `undefined` when id not found */
+  /** GET evento by id. Return `undefined` when id not found */
   getEventoNo404<Data>(id: number): Observable<Evento> {
     const url = `${this.eventosUrl}/?id=${id}`;
     return this.http.get<Evento[]>(url)
@@ -41,7 +40,7 @@ export class EventoService {
       );
   }
  
-  /** GET hero by id. Will 404 if id not found */
+  /** GET evento by id. Will 404 if id not found */
   getEvento(id: number): Observable<Evento> {
     const url = `${this.eventosUrl}/${id}`;
     return this.http.get<Evento>(url).pipe(
@@ -52,14 +51,14 @@ export class EventoService {
  
   //////// Save methods //////////
  
-  /** POST: add a new hero to the server */
+  /** POST: add a new evento to the server */
   addEvento (evento: Evento): Observable<Evento> {
     return this.http.post<Evento>(this.eventosUrl, evento, httpOptions).pipe(
       catchError(this.handleError<Evento>('addEvento'))
     );
   }
  
-  /** DELETE: delete the hero from the server */
+  /** DELETE: delete the evento from the server */
   deleteEvento (evento: Evento | number): Observable<Evento> {
     const id = typeof evento === 'number' ? evento : evento.id;
     const url = `${this.eventosUrl}/${id}`;
@@ -69,7 +68,7 @@ export class EventoService {
     );
   }
  
-  /** PUT: update the hero on the server */
+  /** PUT: update the evento on the server */
   updateEvento (evento: Evento): Observable<any> {
     return this.http.put(this.eventosUrl, evento, httpOptions).pipe(
       catchError(this.handleError<any>('updateEvento'))

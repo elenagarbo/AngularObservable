@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { HeroService } from './evento.service';
+import {EventoService } from './evento.service';
 
-describe('HeroService', () => {
+describe('EventoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HeroService]
+      providers: [EventoService]
     });
   });
 
-  it('should be created', inject([HeroService], (service: HeroService) => {
+  it('should be created', inject([EventoService], (service: EventoService) => {
     expect(service).toBeTruthy();
   }));
 });

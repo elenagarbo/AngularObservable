@@ -1,11 +1,18 @@
 <h3>Top Eventos</h3>
 <div class="grid grid-pad">
   <a *ngFor="let evento of eventos" class="col-1-4">
-    <div class="module evento">
-      <h4>{{evento.ciudad}}</h4>
+    <div class="module evento" [ngStyle]="{'background-image': 'url(' +evento.img+ ')'} " >
     </div>
-    <div class="module evento">
+    
+    <div class="module1 evento">
+        <h4>{{evento.ciudad}}</h4>
         <h4>{{evento.feria}}</h4>
+        
       </div>
   </a>
+
+  <div class="col-md-12 text-center animate-box">
+    <p><a class="btn btn-primary btn-outline btn-lg" [routerLink]="['/eventos']">Ver todas las rutas <i class="fas fa-arrow-right"></i></a></p>
+  </div>
 </div>
+

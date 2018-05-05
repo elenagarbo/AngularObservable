@@ -29,4 +29,8 @@
   }
   table, td, tr, th{
     border: solid 1px black
+    
+  }
+  th {
+    text-align: center;
   }

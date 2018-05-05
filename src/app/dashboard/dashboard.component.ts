@@ -10,6 +10,8 @@ import { EventoService } from '../services/evento.service';
 export class DashboardComponent implements OnInit {
   eventos: Evento[] = [];
 
+  
+
   constructor(private eventoService: EventoService) { }
 
   ngOnInit() {
